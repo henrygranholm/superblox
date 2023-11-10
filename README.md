@@ -1,1 +1,1 @@
-# superblox
+SuperBlox Minting Dapp

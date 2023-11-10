@@ -1,0 +1,28 @@
+.block {
+    &__title {
+        font-family: "Courier Prime";
+        color: rgb(128, 125, 161);
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 157px;
+    }
+
+    &__desc {
+        color: rgb(127, 126, 160);
+        font-weight: 700;
+        width: 45%;
+        margin-top: 20px;
+
+        @media (max-width: 1200px) {
+            width: 45%;
+        }
+
+        @media (max-width: 992px) {
+            width: 66%;
+        }
+
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+    }
+}

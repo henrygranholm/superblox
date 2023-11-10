@@ -1,0 +1,317 @@
+@keyframes entrance {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.gallery {
+    .container {
+        padding-top: 8rem;
+        display: flex;
+
+        @media (max-width: 992px) {
+            padding-top: 5rem;
+        }
+    }
+
+    &__title {
+        display: flex;
+        font-family: "Courier Prime";
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 62px;
+        color: rgb(180, 180, 180);
+    }
+
+    &__filter {
+        width: 300px;
+        margin-right: 2%;
+
+        &__search {
+            position: relative;
+            input {
+                appearance: none;
+                font-size: 12px;
+                display: block;
+                width: 100%;
+                height: 38px;
+                padding: 8px 12px;
+                padding-right: 36px;
+                margin-bottom: 10px;
+                line-height: 1.42;
+                vertical-align: middle;
+                border: 1px solid #cccccc;
+                outline: none;
+
+                &:focus {
+                    border-color: #3898EC;
+                }
+            }
+
+            img {
+                position: absolute;
+                width: 20px;
+                top: 8px;
+                right: 10px;
+            }
+        }
+
+        &__attributes {
+            max-height: calc(100% - 110px);
+            overflow: auto;
+
+            .attrImg {
+                width: 30px;
+                height: 30px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .attrName {
+                font-family: "Courier Prime";
+                font-size: 14px;
+                line-height: 15px;
+                font-weight: 700;
+                color: rgb(180, 180, 180);
+            }
+
+            .attrBadge {
+                width: 25px;
+                height: 25px;
+                background: #583b9b;
+                color: rgb(223 211 211);
+                font-size: 13px;
+                border-radius: 5px;
+            }
+
+            .arrowIcon {
+                width: 17px;
+                height: 17px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .attrContent {
+                height: 0;
+                transition: all .3s ease;
+                overflow: hidden;
+
+                &.active {
+                    height: auto;
+                    overflow-y: auto;
+                }
+            }
+
+            .attrSearch {
+                input {
+                    appearance: none;
+                    font-size: 12px;
+                    display: block;
+                    width: 100%;
+                    height: 38px;
+                    padding: 8px 12px;
+                    line-height: 1.42;
+                    vertical-align: middle;
+                    border: 1px solid #cccccc;
+                    outline: none;
+    
+                    &:focus {
+                        border-color: #3898EC;
+                    }
+                }
+            }
+        }
+
+        &__collapse {
+            display: none;
+        }
+
+        @media (max-width: 576px) {
+            position: fixed;
+            margin-right: 0;
+            transition: all .5s;
+            z-index: 10;
+            background-color: #1b232a;
+            left: -300px;
+            top: 0;
+            padding: 15px;
+            height: 100%;
+
+            &__collapse {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate3d(90%, -50%, 0);
+                background: #1b232a;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-items: center;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                cursor: pointer;
+    
+                svg {
+                    transition: all .5s;
+                    transform: rotate(270deg);
+                }
+            }
+
+            &.active {
+                left: 0;
+
+                .gallery__filter__collapse {
+                    svg {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .item {
+                cursor: pointer;
+                position: relative;
+                width: 25%;
+                animation: entrance 2s;
+                
+                img {
+                    width: 100%;
+                    transition: all .5s linear;
+                    transform: scale(1);
+
+                    &.loading {
+                        filter: blur(50px);
+                        clip-path: inset(0);
+                    }
+                    &.loaded {
+                        filter: blur(0px);
+                    }
+                }
+
+                &__title {
+                    font-family: 'Courier Prime';
+                    color: rgba(26, 27, 31, 0.86);
+                    font-size: 13px;
+                    line-height: 15px;
+                    font-weight: 700;
+                    background-color: rgba(255, 255, 255, 0.3);
+
+                    width: 100%;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                @media (max-width: 1200px) {
+                    width: 33%;
+                }
+
+                @media (max-width: 992px) {
+                    width: 50%;
+                }
+            }
+
+            .clearFilterBtn {
+                color: white;
+                background-color: rgba(62, 45, 99, 0.47);
+                font-size: 16px;
+                line-height: 14px;
+
+                &:hover {
+                    color: rgb(76, 65, 65);
+                }
+            }
+        }
+    }
+}
+
+.attrCheck {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+
+    &__btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        button {
+            width: 20px;
+            height: 20px;
+
+            border: 1px solid #785838;
+
+            transition-property: all;
+            transition-duration: .25s;
+            transition-timing-function: ease;
+
+            margin: 0 10px;
+            margin-left: 0px;
+            background: #FFFFFF;
+            border-radius: 5px;
+            opacity: 1;
+            overflow: hidden;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            display: inline-flex;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: rgb(180, 180, 180);
+        text-align: left;
+        margin-left: 0px;
+        transition-property: all;
+        transition-duration: .25s;
+        transition-timing-function: ease;
+        font-family: "Courier Prime";
+    }
+
+    &:hover {
+        p {
+            color: rgb(149, 149, 149);
+        }
+    }
+
+    &.active {
+        button {
+            border: none;
+            background: #5e35c0;
+        }
+    }
+}

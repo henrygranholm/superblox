@@ -1,0 +1,143 @@
+.Overlay {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(19, 17, 17, 0.5);
+	backdrop-filter: blur(15px);
+}
+
+.mindmapModal {
+	position: absolute;
+	width: 80%;
+	max-width: 1300px;
+	height: 70%;
+	transform: translate3d(-50%, -50%, 0);
+	top: 50%;
+	left: 50%;
+	background-color: #8f90ca;
+	outline: none;
+	// padding: 1rem;
+
+	.closeBtn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50px;
+		height: 50px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.description {
+		font-family: "Courier Prime";
+		max-height: calc(100% - 120px);
+		overflow: auto;
+
+		@media (max-width: 992px) {
+			width: 70%;
+		}
+
+		@media (max-width: 576px) {
+			width: 100%;
+			padding-top: 0;
+		}
+	}
+
+	.backPic {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 2rem;
+		z-index: -1;
+
+		img {
+			width: 100%;
+		}
+
+		@media (max-width: 992px) {
+			opacity: .2;
+		}
+
+		@media (max-width: 576px) {
+			opacity: .2;
+			width: 100%;
+
+			img {
+				object-fit: contain;
+			}
+		}
+
+		&.vision {
+			width: 450px;
+
+			@media (max-width: 992px) {
+				width: 60%;
+			}
+
+			@media (max-width: 576px) {
+				width: 100%;
+			}
+		}
+
+		&.drops {
+			height: 90%;
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+		&.community {
+			padding: 0;
+			height: 100%;
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+
+			@media (max-width: 576px) {
+				img {
+					object-fit: cover;
+				}
+			}
+		}
+
+		&.metaverse {
+			padding: 0;
+			height: 70%;
+
+			img {
+				height: 100%;
+				width: auto;
+				object-fit: cover;
+			}
+
+			@media (max-width: 576px) {
+				height: auto;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		&.partnership {
+			padding: 0;
+			padding-top: 60px;
+			height: 100%;
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+}

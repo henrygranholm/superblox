@@ -1,0 +1,59 @@
+.Overlay {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(19, 17, 17, 0.5);
+	backdrop-filter: blur(15px);
+}
+
+.walletModal {
+	position: absolute;
+	width: 500px;
+	transform: translate3d(-50%, -50%, 0);
+	top: 50%;
+	left: 50%;
+	background-color: rgba(16, 16, 23, 0.8);
+	border-radius: 10px;
+	border: 1px solid #355a7e;
+	padding: 2rem 2rem;
+	
+	.walletBtn {
+		border: 1px solid #123;
+		border-radius: 5px;
+	
+		&:hover {
+		  border: 1px solid rgb(68, 99, 129);
+		}
+	}
+	
+	.walletStatus {
+		background-color: rgba(21, 60, 100, 0.231);
+		border-radius: 5px;
+		border: 1px solid rgb(86, 121, 155);   
+	}
+	
+	.disconnectBtn {
+		border: 1px solid rgb(228, 5, 5);
+		background-color: rgb(132, 131, 182);
+		font-family: "Courier Prime";
+		font-size: 15px;
+		font-weight: 400;
+		color: white;
+	
+		&:hover {
+			color: black;
+		}
+	}
+
+	@media (max-width: 576px) {
+		width: 90%;
+
+		.walletStatus {
+			width: 100%;
+			word-break: break-word;
+		}
+	}
+}

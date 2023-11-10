@@ -1,0 +1,161 @@
+.mindmap {
+    .container {
+        padding-top: 8rem;
+
+        @media (max-width: 992px) {
+            padding-top: 5rem;
+        }
+    }
+
+    &__title {
+        display: flex;
+        font-family: "Courier Prime";
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 62px;
+    }
+
+    &__desc {
+        font-family: "Courier Prime";
+        font-size: 12px;
+        margin-bottom: 2rem;
+    }
+
+    &__gridwrapper {
+        position: relative;
+        height: 620px;
+
+        .first {
+            width: 30%;
+            margin-right: 10px;
+        }
+
+        .third {
+            width: 30%;
+            margin-left: 10px;
+        }
+
+        .community {
+            width: 40%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .gridItem {
+            position: relative;
+            border-style: dotted;
+            border-width: 2px;
+            border-color: rgb(159, 158, 179);
+            cursor: pointer;
+            transition: all .5s;
+
+            h5 {
+                margin: 0;
+                padding-top: 10px;
+                padding-left: 20px;
+                font-size: 18px;
+                font-weight: 600;
+
+                @media (max-width: 576px) {
+                    padding-top: 5px;
+                    padding-left: 5px;
+                }
+            }
+
+            img {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+            &:hover {
+                background-color: rgb(224, 40, 53);
+            }
+        }
+
+        .vision {
+            height: 40%;
+            margin-bottom: 10px;
+
+            img {
+                margin-right: 5%;
+                margin-bottom: 5%;
+                height: 50%;
+            }
+        }
+
+        .drops {
+            height: 60%;
+            img {
+                height: 66%;
+                margin-bottom: 7%;
+                margin-right: 7%;
+            }
+        }
+
+        .metaverse {
+            height: 50%;
+            margin-bottom: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .partnership {
+            height: 50%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 576px) {
+            height: 450px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .mindmap {
+        &__gridwrapper {
+            flex-wrap: wrap;
+
+            .first {
+                width: 40%;
+                margin-right: 0;
+            }
+
+            .community {
+                width: 58%;
+            }
+
+            .third {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 10px;
+
+                flex-direction: row;
+            }
+
+            .metaverse {
+                width: 50%;
+                height: 100%;
+                margin-right: 10px;
+            }
+
+            .partnership {
+                width: 50%;
+                height: 100%;
+            }
+        }
+    }
+}

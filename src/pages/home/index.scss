@@ -1,0 +1,66 @@
+.home {
+    font-family: "Courier Prime";
+
+    &__mintingbox {
+        position: absolute;
+        background-color: #0e0e3a;
+        right: 50px;
+        transform: translate3d(0, -50%, 0);
+        top: calc(50% + 80px);
+        width: 363px;
+        height: 500px;
+        color: #d3cdcd;
+        max-height: 75%;
+
+        .pro_desc {
+            position: absolute;
+            top: -80px;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 576px) {
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            width: 95%;
+            height: 450px;
+        }
+
+        &__inputbox {
+            button {
+                background-color: #252628;
+                width: 25%;
+                height: 70px;
+
+                &:disabled {
+                    color: #8a8a8a;
+                    cursor: not-allowed;
+                }
+            }
+
+            input {
+                color: #c62422;
+                width: 50%;
+            }
+        }
+
+        &__mintbtn {
+            button {
+                background: #afb4ba;
+
+                &:hover {
+                    color: #df4141;
+                }
+
+                &:disabled {
+                    color: #632121;
+                    cursor: not-allowed;
+                }
+            }
+
+            a {
+                color: #2d2ecb;
+            }
+        }
+    }
+}
